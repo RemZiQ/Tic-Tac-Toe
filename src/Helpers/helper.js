@@ -36,20 +36,18 @@ export function checkWinner() {
 
   // check rows
   for (let i = 0; i < length; i += 1) {
-    if (matrix[i].includes(0)) {
-      if (matrix[i].every((elem, index, arr) => arr[0] === elem)) {
-        return matrix[i][0];
-      }
+    if (matrix[i].includes(0)) continue;
+    if (matrix[i].every((elem, index, arr) => arr[0] === elem)) {
+      return matrix[i][0];
     }
   }
 
   // check columns
   for (let i = 0; i < length; i += 1) {
     const currentColumn = matrix.map(elem => elem[i]);
-    if (currentColumn.includes(0)) {
-      if (currentColumn.every((elem, index, arr) => arr[0] === elem)) {
-        return currentColumn[0];
-      }
+    if (currentColumn.includes(0)) continue;
+    if (currentColumn.every((elem, index, arr) => arr[0] === elem)) {
+      return currentColumn[0];
     }
   }
 

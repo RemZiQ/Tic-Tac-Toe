@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
 import Row from './Components/Row';
+import Footer from './Components/Footer'
 import { createMatrix, idMaker } from './Helpers/helper';
 
 import './css/app.css';
@@ -15,8 +16,8 @@ const App = () => {
     setGameOVer(true);
   };
   let counter = idMaker();
-  const yellow = 'Yellow win!!!!!Gratz';
-  const red = 'Red win!!!!!Gratz';
+  const yellow = 'Circle win!!!!!Gratz';
+  const red = 'Cross win!!!!!Gratz';
   useEffect(() => {
     counter = idMaker();
     window.sessionStorage.clear();
@@ -38,31 +39,37 @@ const App = () => {
         </div>
       )}
       {!gameOver && (
-        <div className="layout-container">
-          <button type="button" onClick={handlerForAbordGame}>End game</button>
-          <Row
-            counter={counter}
-            count={countOfMoves}
-            setCount={setCount}
-            setGameOVer={setGameOVer}
-            setWinner={setWinner}
-          />
-          <Row
-            counter={counter}
-            count={countOfMoves}
-            setCount={setCount}
-            setGameOVer={setGameOVer}
-            setWinner={setWinner}
-          />
-          <Row
-            counter={counter}
-            count={countOfMoves}
-            setCount={setCount}
-            setGameOVer={setGameOVer}
-            setWinner={setWinner}
-          />
-        </div>
+        <Fragment>
+          <header className="header">
+            <h1 className="logo">Tic-tac-toe</h1>
+            <button className="end-game" type="button" onClick={handlerForAbordGame}>End game</button>
+          </header>
+          <div className="layout-container__play-zone">
+            <Row
+              counter={counter}
+              count={countOfMoves}
+              setCount={setCount}
+              setGameOVer={setGameOVer}
+              setWinner={setWinner}
+            />
+            <Row
+              counter={counter}
+              count={countOfMoves}
+              setCount={setCount}
+              setGameOVer={setGameOVer}
+              setWinner={setWinner}
+            />
+            <Row
+              counter={counter}
+              count={countOfMoves}
+              setCount={setCount}
+              setGameOVer={setGameOVer}
+              setWinner={setWinner}
+            />
+          </div>
+        </Fragment>
       )}
+      <Footer />
     </Fragment>
   );
 };

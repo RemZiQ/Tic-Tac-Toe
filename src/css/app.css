@@ -2,11 +2,39 @@
   padding: 0;
   margin: 0;
 }
-.layout-container {
+body {
+  background-color: rgb(230, 230, 0);
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 14vmin;
+  border: 1px solid red;
+}
+
+.header h1{
+  color: rgb(207, 57, 3);
+  font-size: 7vmin;
+  font-family: 'Pacifico', cursive;
+}
+
+.layout-container__play-zone {
+  align-self: center;
   box-sizing: border-box;
   width: 50vmin;
   height: 50vmin;
-  margin: 25vmin auto;
   border: 1px solid grey;
 }
 
@@ -18,7 +46,7 @@
   box-sizing: border-box;
   width: 33.33333vmin;
   height: 16.6666vmin;
-  border: 1px solid grey;
+  border: 3px solid rgba(110, 1, 1, 0.575);
 }
 
 .red {
@@ -39,14 +67,74 @@
 
 .winner {
   margin-top: 5vmin;
-  color: red;
+  color: rgb(155, 0, 0);
   text-align: center;
   font-size: 48px;
+  font-family: 'Pacifico', cursive;
 }
 
+.end-game {
+  width: 14vmin;
+  height: 6vmin;
+  outline: none;
+  border: none;
+  border-radius: 1vmin;
+  background-color: rgba(207, 57, 3, 0.781);
+  color: rgb(255, 208, 0);
+  font-family: 'Pacifico', cursive;
+  font-size: 2vmin;
+  font-weight: 500;
+}
 .play-again {
   display: block;
-  width: 12vmin;
-  height: 5vmin;
-  margin: 5vmin auto;;
+  width: 30vmin;
+  height: 10vmin;
+  margin: 15vmin auto;
+  outline: none;
+  border: none;
+  border-radius: 1vmin;
+  background-color: rgba(207, 57, 3, 0.781);
+  color: rgb(255, 208, 0);
+  font-family: 'Pacifico', cursive;
+  font-size: 4vmin;
+  font-weight: 500;
+}
+.play-again:active, .end-game:active {
+  background-color: rgb(155, 0, 0);
+  box-shadow: 0 0 3vmin rgba(207, 57, 3, 0.781);
+}
+
+.fas {
+  font-size: 16vmin;
+  font-weight: 600;
+  color: rgba(110, 1, 1, 0.705)
+}
+
+.far {
+  font-size: 14vmin;
+  font-weight: 200;
+  color: rgba(110, 54, 1, 0.671);
+}
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 8vmin;
+  border: 1px solid red;
+}
+
+.footer a {
+  margin-right: 15vmin;
+  text-decoration: none;
+  font-size: 3vmin;
+  font-family: 'Pacifico', cursive;
+  word-spacing: 10px;
+  color: rgb(141, 14, 141);
+}
+
+.fa-copyright {
+  font-size: 3vmin;
+  color: rgb(141, 14, 141);
 }
