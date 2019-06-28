@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.layout-container {
+  box-sizing: border-box;
+  width: 50vmin;
+  height: 50vmin;
+  margin: 25vmin auto;
+  border: 1px solid grey;
+}
+
+.flex-container__row {
+  display: flex;
+}
+
+.cell {
+  box-sizing: border-box;
+  width: 33.33333vmin;
+  height: 16.6666vmin;
+  border: 1px solid grey;
+}
+
+.red {
+  box-sizing: border-box;
+  width: 33.33333vmin;
+  height: 16.6666vmin;
+  background-color: red;
+  border: 1px solid grey;
+}
+
+.yellow {
+  box-sizing: border-box;
+  width: 33.33333vmin;
+  height: 16.6666vmin;
+  background-color:  yellow;;
+  border: 1px solid grey;
+}
+
+.winner {
+  margin-top: 5vmin;
+  color: red;
+  text-align: center;
+  font-size: 48px;
+}
+
+.play-again {
+  display: block;
+  width: 12vmin;
+  height: 5vmin;
+  margin: 5vmin auto;;
+}
