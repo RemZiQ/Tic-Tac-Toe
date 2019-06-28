@@ -74,3 +74,6 @@ export function idMaker() {
     return count;
   };
 }
+
+
+export const reloadPage = () => window.location.reload();

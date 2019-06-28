@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
 import Row from './Components/Row';
-import Footer from './Components/Footer'
-import { createMatrix, idMaker } from './Helpers/helper';
+import Footer from './Components/Footer';
+import { createMatrix, idMaker, reloadPage } from './Helpers/helper';
 
 import './css/app.css';
 
@@ -10,7 +10,6 @@ const App = () => {
   const [countOfMoves, setCount] = useState(0);
   const [gameOver, setGameOVer] = useState(false);
   const [winner, setWinner] = useState(undefined);
-  const handlerReloadPage = () => window.location.reload();
   const handlerForAbordGame = () => {
     setWinner(1);
     setGameOVer(true);
@@ -32,7 +31,7 @@ const App = () => {
           <button
             className="play-again"
             type="button"
-            onClick={handlerReloadPage}
+            onClick={reloadPage}
           >
             Play again
           </button>

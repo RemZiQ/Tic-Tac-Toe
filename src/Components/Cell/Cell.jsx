@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+
+import Modal from '../Modal';
+import PopUp from '../PopUp';
+
 import { updateMatrix, checkWinner } from '../../Helpers/helper';
 
 const Cell = ({ id, setGameOVer, setWinner }) => {
   const [selectFlag, setFlag] = useState(false);
   const [cross, setCrossFlag] = useState(null);
+  const [draw, setDraw] = useState(false);
 
   // TODO!!!: user can change cross on circle if multi click Cell!
   const placeCrossOrCircle = () => {
@@ -30,6 +35,7 @@ const Cell = ({ id, setGameOVer, setWinner }) => {
           setGameOVer(true);
         }
       }
+      if (count >= 8) setDraw(true);
     }
     setFlag(true);
   };
@@ -42,6 +48,11 @@ const Cell = ({ id, setGameOVer, setWinner }) => {
       onClick={handler}
     >
       {cross === null ? null : placeCrossOrCircle()}
+      {!draw ? null : (
+        <Modal>
+          <PopUp closeModal={setDraw} />
+        </Modal>
+      )}
     </button>
   );
 };
